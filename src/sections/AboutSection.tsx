@@ -2,8 +2,18 @@ import FadeIn from '../components/FadeIn';
 import AnimatedText from '../components/AnimatedText';
 import ContactButton from '../components/ContactButton';
 
-const ABOUT_TEXT =
-  "With more than five years of experience in design, i focus on branding, web design, and user experience, i truly enjoy working with businesses that aim to stand out and present their best image. Let's build something incredible together!";
+const BIO =
+  'AI-Native Full-Stack Developer Who Pairs Solid Engineering Fundamentals With Modern, Agentic AI-Assisted Workflows To Ship Production-Ready Web Apps — Not Just Prototypes. Certified Across The Complete JavaScript Path (Fundamentals → Advanced → Applications, Incl. AJAX, DOM & SPA), React, And Responsive HTML/CSS Design, With Object-Oriented Java, Databases, And Dedicated Training In Building Full-Stack Apps With AI. I Turn Ideas Into Clean, Scalable Front-Ends And Reliable Back-Ends Fast — Fluent With Git/GitHub And AI Tools Like GitHub Copilot And Many More.';
+
+const DETAILS: { label: string; value: string; href?: string }[] = [
+  { label: 'Age', value: '37' },
+  { label: 'Gender', value: 'Male' },
+  { label: 'Language', value: 'German, Bulgarian, English' },
+  { label: 'Profession', value: 'AI Software Developer | Full-Stack' },
+  { label: 'Phone', value: '+359 897 949 326', href: 'tel:+359897949326' },
+  { label: 'E-Mail', value: 'Lobido1988@Gmail.Com', href: 'mailto:Lobido1988@Gmail.Com' },
+  { label: 'Country', value: 'Bulgaria' },
+];
 
 export default function AboutSection() {
   return (
@@ -50,28 +60,70 @@ export default function AboutSection() {
         <img src="/images/about/group.png" alt="" className="w-full h-auto" />
       </FadeIn>
 
-      {/* Heading + animated paragraph */}
-      <div className="flex flex-col items-center gap-10 sm:gap-14 md:gap-16">
-        <FadeIn
-          as="h2"
-          delay={0}
-          y={40}
-          className="hero-heading font-black uppercase leading-none tracking-tight"
-          style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
-        >
-          About me
-        </FadeIn>
+      {/* Heading, tagline, bio and details */}
+      <div className="relative z-10 flex flex-col items-center gap-8 sm:gap-10 md:gap-12 w-full max-w-3xl">
+        <div className="flex flex-col items-center gap-3 sm:gap-4">
+          <FadeIn
+            as="h2"
+            delay={0}
+            y={40}
+            className="hero-heading font-black uppercase leading-none tracking-tight"
+            style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
+          >
+            About me
+          </FadeIn>
+          <FadeIn
+            as="p"
+            delay={0.1}
+            y={20}
+            className="text-[#D7E2EA] font-medium uppercase tracking-[0.25em]"
+            style={{ fontSize: 'clamp(0.8rem, 1.6vw, 1.15rem)' }}
+          >
+            AI Developer | Full-Stack
+          </FadeIn>
+        </div>
 
         <AnimatedText
-          text={ABOUT_TEXT}
-          className="text-[#D7E2EA] font-medium leading-relaxed max-w-[560px]"
-          style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
+          text={BIO}
+          className="text-[#D7E2EA] font-medium leading-relaxed max-w-[640px]"
+          style={{ fontSize: 'clamp(0.95rem, 1.5vw, 1.2rem)' }}
         />
+
+        <FadeIn delay={0.15} y={20} className="w-full max-w-xl">
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 text-left">
+            {DETAILS.map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col gap-1 pb-3 border-b"
+                style={{ borderColor: 'rgba(215, 226, 234, 0.12)' }}
+              >
+                <dt className="text-[#D7E2EA]/50 uppercase tracking-widest text-xs">
+                  {item.label}
+                </dt>
+                <dd
+                  className="text-[#D7E2EA] font-medium"
+                  style={{ fontSize: 'clamp(0.9rem, 1.4vw, 1.1rem)' }}
+                >
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      className="hover:opacity-70 transition-opacity duration-200 break-all"
+                    >
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </FadeIn>
       </div>
 
-      <div className="mt-16 sm:mt-20 md:mt-24">
+      <div className="relative z-10 mt-14 sm:mt-16 md:mt-20">
         <FadeIn delay={0.2} y={20}>
-          <ContactButton />
+          <ContactButton href="mailto:Lobido1988@Gmail.Com" />
         </FadeIn>
       </div>
     </section>
