@@ -84,14 +84,14 @@ function ProjectCard({
               src={`/images/projects/${project.img}-2.png`}
               alt={`${project.name} preview 1`}
               loading="lazy"
-              className={`w-full object-cover object-top ${CARD_RADIUS}`}
+              className={`w-full object-cover object-center ${CARD_RADIUS}`}
               style={{ height: 'clamp(90px, 13vh, 175px)' }}
             />
             <img
               src={`/images/projects/${project.img}-3.png`}
               alt={`${project.name} preview 2`}
               loading="lazy"
-              className={`w-full object-cover object-top ${CARD_RADIUS}`}
+              className={`w-full object-cover object-center ${CARD_RADIUS}`}
               style={{ height: 'clamp(120px, 18vh, 250px)' }}
             />
           </div>
