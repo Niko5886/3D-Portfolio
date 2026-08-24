@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowUp } from 'lucide-react';
 
 /**
  * Floating "back to top" button. Appears after scrolling past the hero and
- * smooth-scrolls to the top. Uses the site's signature gradient CTA styling.
+ * smooth-scrolls to the top. A circular dark-glass FAB holds the 3D chrome
+ * cursor arrow (rotated to point up) to match the site's iridescent language.
  */
 export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
@@ -29,19 +29,28 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.6, y: 20 }}
           transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-          whileHover={{ scale: 1.08 }}
-          whileTap={{ scale: 0.94 }}
-          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 flex items-center justify-center rounded-full w-12 h-12 sm:w-14 sm:h-14"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.92 }}
+          className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 flex items-center justify-center rounded-full w-16 h-16 sm:w-[72px] sm:h-[72px]"
           style={{
             background:
-              'linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)',
-            boxShadow:
-              '0px 4px 4px rgba(181, 1, 167, 0.25), inset 4px 4px 12px #7721B1',
-            outline: '2px solid #ffffff',
-            outlineOffset: '-3px',
+              'radial-gradient(circle at 35% 28%, rgba(118, 33, 176, 0.5), rgba(12, 12, 12, 0.85))',
+            border: '1px solid rgba(215, 226, 234, 0.22)',
+            boxShadow: '0 8px 26px rgba(118, 33, 176, 0.5)',
+            backdropFilter: 'blur(6px)',
+            WebkitBackdropFilter: 'blur(6px)',
           }}
         >
-          <ArrowUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" strokeWidth={2.5} />
+          <img
+            src="/images/ui/arrow-up.png"
+            alt=""
+            draggable={false}
+            className="w-9 h-9 sm:w-11 sm:h-11 object-contain select-none pointer-events-none"
+            style={{
+              transform: 'rotate(45deg)',
+              filter: 'drop-shadow(0 2px 5px rgba(0, 0, 0, 0.45))',
+            }}
+          />
         </motion.button>
       )}
     </AnimatePresence>
