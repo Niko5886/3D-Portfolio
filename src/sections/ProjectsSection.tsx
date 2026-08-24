@@ -78,21 +78,20 @@ function ProjectCard({
           rel="noopener noreferrer"
           aria-label={`Open ${project.name}`}
           className="flex gap-3 sm:gap-4"
+          style={{ height: 'clamp(280px, 42vh, 460px)' }}
         >
           <div className="w-2/5 flex flex-col gap-3 sm:gap-4">
             <img
               src={`/images/projects/${project.img}-2.png`}
               alt={`${project.name} preview 1`}
               loading="lazy"
-              className={`w-full object-cover object-center ${CARD_RADIUS}`}
-              style={{ height: 'clamp(90px, 13vh, 175px)' }}
+              className={`w-full flex-[2] min-h-0 object-cover object-center ${CARD_RADIUS}`}
             />
             <img
               src={`/images/projects/${project.img}-3.png`}
               alt={`${project.name} preview 2`}
               loading="lazy"
-              className={`w-full object-cover object-center ${CARD_RADIUS}`}
-              style={{ height: 'clamp(120px, 18vh, 250px)' }}
+              className={`w-full flex-[3] min-h-0 object-cover object-center ${CARD_RADIUS}`}
             />
           </div>
           <div className="w-3/5">
