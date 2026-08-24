@@ -71,21 +71,38 @@ function ProjectCard({
           <LiveProjectButton href={project.href} />
         </div>
 
-        {/* Live project screenshot */}
+        {/* Live project screenshots — two stacked left, one tall right */}
         <a
           href={project.href}
           target="_blank"
           rel="noopener noreferrer"
           aria-label={`Open ${project.name}`}
-          className={`group block overflow-hidden ${CARD_RADIUS}`}
+          className="flex gap-3 sm:gap-4"
         >
-          <img
-            src={`/images/projects/${project.img}.png`}
-            alt={`${project.name} preview`}
-            loading="lazy"
-            className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
-            style={{ height: 'clamp(200px, 34vw, 470px)' }}
-          />
+          <div className="w-2/5 flex flex-col gap-3 sm:gap-4">
+            <img
+              src={`/images/projects/${project.img}-2.png`}
+              alt={`${project.name} preview 1`}
+              loading="lazy"
+              className={`w-full object-cover object-top ${CARD_RADIUS}`}
+              style={{ height: 'clamp(130px, 16vw, 230px)' }}
+            />
+            <img
+              src={`/images/projects/${project.img}-3.png`}
+              alt={`${project.name} preview 2`}
+              loading="lazy"
+              className={`w-full object-cover object-top ${CARD_RADIUS}`}
+              style={{ height: 'clamp(160px, 22vw, 340px)' }}
+            />
+          </div>
+          <div className="w-3/5">
+            <img
+              src={`/images/projects/${project.img}.png`}
+              alt={`${project.name} preview 3`}
+              loading="lazy"
+              className={`w-full h-full object-cover object-top ${CARD_RADIUS}`}
+            />
+          </div>
         </a>
       </motion.div>
     </div>
