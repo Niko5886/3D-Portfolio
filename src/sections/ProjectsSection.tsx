@@ -8,28 +8,21 @@ interface Project {
   num: string;
   category: string;
   name: string;
-  images: [string, string, string]; // col1 top, col1 bottom, col2 tall
+  img: string;
+  href: string;
 }
 
 const PROJECTS: Project[] = [
-  {
-    num: '01',
-    category: 'Client',
-    name: 'Nextlevel Studio',
-    images: ['p01-a', 'p01-b', 'p01-c'],
-  },
-  {
-    num: '02',
-    category: 'Personal',
-    name: 'Aura Brand Identity',
-    images: ['p02-a', 'p02-b', 'p02-c'],
-  },
-  {
-    num: '03',
-    category: 'Client',
-    name: 'Solaris Digital',
-    images: ['p03-a', 'p03-b', 'p03-c'],
-  },
+  { num: '01', category: 'E-Commerce', name: 'Dana Vitan Store', img: 'dana-vitan', href: 'https://www.danavitan.com/' },
+  { num: '02', category: 'Corporate', name: 'BBL', img: 'bbl', href: 'https://black-and-yellow.netlify.app/' },
+  { num: '03', category: 'Corporate', name: 'At Group', img: 'atgroup', href: 'https://nik-atgroup.netlify.app/home' },
+  { num: '04', category: 'Web App', name: 'Event Planner', img: 'event-planner', href: 'https://eventplannerns.netlify.app/' },
+  { num: '05', category: 'Dating App', name: 'SwingMe', img: 'swingme', href: 'https://swingme.netlify.app/' },
+  { num: '06', category: 'Restaurant', name: 'The Old Florence', img: 'old-florence', href: 'https://theoldflorence.netlify.app/' },
+  { num: '07', category: 'Web App', name: 'CoupleCouple', img: 'couplecouple', href: 'https://couplecouple.netlify.app/login' },
+  { num: '08', category: 'Business Site', name: 'Hairdresser Gloss', img: 'hairdresser-gloss', href: 'https://hairdresser-web-site.vercel.app/' },
+  { num: '09', category: 'Artist Website', name: 'Courtney Barnett', img: 'courtney-barnett', href: 'https://courtney-barnett-website.netlify.app/' },
+  { num: '10', category: 'Personal', name: 'CV Website N.S', img: 'cv-website', href: 'https://cv-website-for-nikol-g449.bolt.host/' },
 ];
 
 const CARD_RADIUS = 'rounded-[40px] sm:rounded-[50px] md:rounded-[60px]';
@@ -47,7 +40,6 @@ function ProjectCard({
 }) {
   const targetScale = 1 - (total - 1 - index) * 0.03;
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
-  const [col1Top, col1Bottom, col2] = project.images;
 
   return (
     <div className="h-[85vh] flex justify-center sticky top-24 md:top-32">
@@ -76,36 +68,25 @@ function ProjectCard({
               </h3>
             </div>
           </div>
-          <LiveProjectButton />
+          <LiveProjectButton href={project.href} />
         </div>
 
-        {/* Bottom image grid */}
-        <div className="flex gap-3 sm:gap-4">
-          <div className="w-2/5 flex flex-col gap-3 sm:gap-4">
-            <img
-              src={`/images/projects/${col1Top}.webp`}
-              alt={`${project.name} preview 1`}
-              loading="lazy"
-              className={`w-full object-cover ${CARD_RADIUS}`}
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
-            />
-            <img
-              src={`/images/projects/${col1Bottom}.webp`}
-              alt={`${project.name} preview 2`}
-              loading="lazy"
-              className={`w-full object-cover ${CARD_RADIUS}`}
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
-            />
-          </div>
-          <div className="w-3/5">
-            <img
-              src={`/images/projects/${col2}.webp`}
-              alt={`${project.name} preview 3`}
-              loading="lazy"
-              className={`w-full h-full object-cover ${CARD_RADIUS}`}
-            />
-          </div>
-        </div>
+        {/* Live project screenshot */}
+        <a
+          href={project.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Open ${project.name}`}
+          className={`group block overflow-hidden ${CARD_RADIUS}`}
+        >
+          <img
+            src={`/images/projects/${project.img}.png`}
+            alt={`${project.name} preview`}
+            loading="lazy"
+            className="w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.04]"
+            style={{ height: 'clamp(200px, 34vw, 470px)' }}
+          />
+        </a>
       </motion.div>
     </div>
   );
@@ -130,7 +111,7 @@ export default function ProjectsSection() {
         className="hero-heading font-black uppercase leading-none tracking-tight text-center mb-16 sm:mb-20 md:mb-28"
         style={{ fontSize: 'clamp(3rem, 12vw, 160px)' }}
       >
-        Project
+        Projects
       </FadeIn>
 
       <div ref={containerRef}>
