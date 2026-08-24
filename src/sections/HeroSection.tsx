@@ -72,7 +72,7 @@ export default function HeroSection() {
           >
             <img
               src="/images/hero/portrait.png"
-              alt="Jack, 3D creator"
+              alt="Nik, 3D creator"
               className="w-full h-auto select-none pointer-events-none"
               draggable={false}
             />
