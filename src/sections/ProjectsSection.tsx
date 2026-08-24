@@ -42,17 +42,17 @@ function ProjectCard({
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
   return (
-    <div className="h-[85vh] flex justify-center sticky top-24 md:top-32">
+    <div className="h-[88vh] flex items-center justify-center sticky top-0">
       <motion.div
-        style={{ scale, top: `${index * 28}px`, background: '#0C0C0C' }}
-        className={`relative w-full ${CARD_RADIUS} border-2 border-[#D7E2EA] p-4 sm:p-6 md:p-8`}
+        style={{ scale, top: `${index * 16}px`, background: '#0C0C0C' }}
+        className={`relative w-full ${CARD_RADIUS} border-2 border-[#D7E2EA] p-4 sm:p-5 md:p-6`}
       >
         {/* Top row */}
         <div className="flex items-center justify-between gap-4 flex-wrap mb-4 sm:mb-6">
           <div className="flex items-center gap-4 sm:gap-6">
             <span
               className="font-black"
-              style={{ fontSize: 'clamp(3rem, 10vw, 140px)', color: '#D7E2EA', lineHeight: 1 }}
+              style={{ fontSize: 'clamp(2.25rem, 7vw, 115px)', color: '#D7E2EA', lineHeight: 1 }}
             >
               {project.num}
             </span>
@@ -85,14 +85,14 @@ function ProjectCard({
               alt={`${project.name} preview 1`}
               loading="lazy"
               className={`w-full object-cover object-top ${CARD_RADIUS}`}
-              style={{ height: 'clamp(130px, 16vw, 230px)' }}
+              style={{ height: 'clamp(90px, 13vh, 175px)' }}
             />
             <img
               src={`/images/projects/${project.img}-3.png`}
               alt={`${project.name} preview 2`}
               loading="lazy"
               className={`w-full object-cover object-top ${CARD_RADIUS}`}
-              style={{ height: 'clamp(160px, 22vw, 340px)' }}
+              style={{ height: 'clamp(120px, 18vh, 250px)' }}
             />
           </div>
           <div className="w-3/5">
