@@ -72,11 +72,7 @@ function ProjectCard({
         </div>
 
         {/* Live project screenshots — two stacked left, one tall right */}
-        <a
-          href={project.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Open ${project.name}`}
+        <div
           className="flex gap-3 sm:gap-4"
           style={{ height: 'clamp(280px, 42vh, 460px)' }}
         >
@@ -102,7 +98,7 @@ function ProjectCard({
               className={`w-full h-full object-cover object-top ${CARD_RADIUS}`}
             />
           </div>
-        </a>
+        </div>
       </motion.div>
     </div>
   );
