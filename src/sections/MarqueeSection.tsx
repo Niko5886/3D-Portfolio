@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import FadeIn from '../components/FadeIn';
 
 // Row 1 = first 11 clips, Row 2 = remaining clips (celestia was removed upstream).
 const ROW1 = [
@@ -68,6 +69,34 @@ export default function MarqueeSection() {
       className="overflow-hidden pt-24 sm:pt-32 md:pt-40 pb-10"
       style={{ background: '#0C0C0C' }}
     >
+      <div className="px-5 sm:px-8 md:px-10 text-center mb-12 sm:mb-16 md:mb-20">
+        <FadeIn
+          as="p"
+          y={20}
+          className="text-[#D7E2EA]/60 uppercase tracking-[0.3em] mb-3 sm:mb-4"
+          style={{ fontSize: 'clamp(0.7rem, 1.2vw, 0.95rem)' }}
+        >
+          Showreel
+        </FadeIn>
+        <FadeIn
+          as="h2"
+          delay={0.1}
+          y={30}
+          className="hero-heading font-black uppercase leading-none tracking-tight"
+          style={{ fontSize: 'clamp(2.5rem, 8vw, 110px)' }}
+        >
+          In Motion
+        </FadeIn>
+        <FadeIn
+          as="p"
+          delay={0.2}
+          className="text-[#D7E2EA] font-light mx-auto mt-4 sm:mt-6 max-w-[460px]"
+          style={{ fontSize: 'clamp(0.85rem, 1.5vw, 1.1rem)' }}
+        >
+          A living reel of the web and motion styles I craft.
+        </FadeIn>
+      </div>
+
       <div className="flex flex-col gap-3">
         <div
           className="flex gap-3"
