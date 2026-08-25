@@ -90,7 +90,7 @@ export default function AboutSection() {
         />
 
         <FadeIn delay={0.15} y={20} className="w-full max-w-xl">
-          <dl className="selectable grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 text-left">
+          <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-4 text-left">
             {DETAILS.map((item) => (
               <div
                 key={item.label}
