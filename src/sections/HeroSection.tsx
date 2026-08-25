@@ -55,7 +55,7 @@ export default function HeroSection() {
           y={40}
           className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-[14vw] sm:text-[15vw] md:text-[16vw] lg:text-[17.5vw] mt-6 sm:mt-4 md:-mt-5"
         >
-          Hi, i&apos;m nik
+          Hi, i&apos;m&nbsp;&nbsp;nik
         </FadeIn>
       </div>
 
