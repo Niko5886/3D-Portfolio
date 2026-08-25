@@ -1,6 +1,6 @@
 import FadeIn from '../components/FadeIn';
 import Magnet from '../components/Magnet';
-import ContactButton from '../components/ContactButton';
+import DownloadCVButton from '../components/DownloadCVButton';
 import useScrollSpy from '../hooks/useScrollSpy';
 
 const NAV_LINKS = [
@@ -71,7 +71,7 @@ export default function HeroSection() {
           AI-Native Developer &amp; 3D Creator, driven to craft bold, unforgettable projects and software solutions.
         </FadeIn>
         <FadeIn delay={0.5} y={20}>
-          <ContactButton />
+          <DownloadCVButton />
         </FadeIn>
       </div>
 
