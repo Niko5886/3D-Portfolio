@@ -22,7 +22,6 @@ const PROJECTS: Project[] = [
   { num: '07', category: 'Web App', name: 'CoupleCouple', img: 'couplecouple', href: 'https://couplecouple.netlify.app/login' },
   { num: '08', category: 'Business Site', name: 'Hairdresser Gloss', img: 'hairdresser-gloss', href: 'https://hairdresser-web-site.vercel.app/' },
   { num: '09', category: 'Artist Website', name: 'Courtney Barnett', img: 'courtney-barnett', href: 'https://courtney-barnett-website.netlify.app/' },
-  { num: '10', category: 'Personal', name: 'CV Website N.S', img: 'cv-website', href: 'https://cv-website-for-nikol-g449.bolt.host/' },
 ];
 
 const CARD_RADIUS = 'rounded-[40px] sm:rounded-[50px] md:rounded-[60px]';
