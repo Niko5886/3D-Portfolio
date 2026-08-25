@@ -34,7 +34,7 @@ export default function ContactSection() {
         className="w-full max-w-5xl mx-auto mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[#D7E2EA]/50 text-xs sm:text-sm uppercase tracking-widest"
         style={{ borderTop: '1px solid rgba(215, 226, 234, 0.15)' }}
       >
-        <span>© 2026 Powered by N.Stoyanov — 3D Creator</span>
+        <span>© 2026 Powered by N.Stoyanov — AI-Native Full-Stack Developer and 3D Creator</span>
         <span>Crafted with passion</span>
       </div>
     </section>
