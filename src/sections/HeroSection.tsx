@@ -6,6 +6,7 @@ import useScrollSpy from '../hooks/useScrollSpy';
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
+  { label: 'Certificates', href: '#certifications' },
   { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -25,7 +26,7 @@ export default function HeroSection() {
         as="nav"
         delay={0}
         y={-20}
-        className="relative z-20 flex justify-between px-6 md:px-10 pt-6 md:pt-8 text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]"
+        className="relative z-20 flex justify-between gap-2 px-4 sm:px-6 md:px-10 pt-6 md:pt-8 text-[#D7E2EA] font-medium uppercase tracking-wide sm:tracking-wider text-[0.7rem] sm:text-sm md:text-base lg:text-[1.3rem]"
       >
         {NAV_LINKS.map((link) => {
           const isActive = activeId === link.href.slice(1);
