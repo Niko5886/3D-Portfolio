@@ -68,7 +68,7 @@ export default function HeroSection() {
           className="text-[#D7E2EA] font-light uppercase tracking-wide leading-snug max-w-[160px] sm:max-w-[220px] md:max-w-[260px]"
           style={{ fontSize: 'clamp(0.75rem, 1.4vw, 1.5rem)' }}
         >
-          A 3D creator driven to craft bold, unforgettable projects and software solutions.
+          AI-Native Developer &amp; 3D Creator, driven to craft bold, unforgettable projects and software solutions.
         </FadeIn>
         <FadeIn delay={0.5} y={20}>
           <ContactButton />
