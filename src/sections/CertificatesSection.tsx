@@ -42,7 +42,7 @@ function CertTile({ cert, onOpen }: { cert: Cert; onOpen: (c: Cert) => void }) {
     <button
       type="button"
       onClick={() => onOpen(cert)}
-      className={`group relative flex flex-col justify-between overflow-hidden rounded-[22px] p-4 sm:p-5 text-left transition-all duration-300 hover:-translate-y-1 ${spanClass}`}
+      className={`group relative overflow-hidden rounded-[22px] text-left transition-all duration-300 hover:-translate-y-1 ${spanClass}`}
       style={{
         background: featured
           ? 'linear-gradient(155deg, rgba(118,33,176,0.22), rgba(190,76,0,0.10) 70%, rgba(12,12,12,0.6))'
@@ -53,31 +53,47 @@ function CertTile({ cert, onOpen }: { cert: Cert; onOpen: (c: Cert) => void }) {
         boxShadow: featured ? '0 12px 40px rgba(118,33,176,0.28)' : 'none',
       }}
     >
+      {/* certificate preview — scaled down and centred */}
+      <img
+        src={`/certificates/thumbs/${cert.id}.webp`}
+        alt={cert.title}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-contain p-3 sm:p-4 transition-transform duration-300 group-hover:scale-[1.03]"
+      />
+
       {/* hover glow ring */}
       <span
         className="pointer-events-none absolute inset-0 rounded-[22px] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={{ boxShadow: 'inset 0 0 0 1px rgba(182,0,168,0.55), 0 10px 40px rgba(118,33,176,0.25)' }}
       />
 
-      <div className="flex items-center justify-between">
-        <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#D7E2EA]/45">
+      {/* top scrim: issuer + open hint */}
+      <div
+        className="absolute inset-x-0 top-0 flex items-center justify-between p-3 sm:p-4"
+        style={{ background: 'linear-gradient(to bottom, rgba(10,10,12,0.92), transparent)' }}
+      >
+        <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#D7E2EA]/70">
           {cert.issuer === 'SoftUni' ? 'SoftUni' : 'Germany'}
         </span>
-        <ArrowUpRight className="w-4 h-4 text-[#D7E2EA]/40 opacity-0 -translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0" />
+        <ArrowUpRight className="w-4 h-4 text-[#D7E2EA]/70 opacity-0 -translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0" />
       </div>
 
-      <div className="mt-auto">
-        {featured && (
+      {/* bottom scrim: score + title */}
+      <div
+        className="absolute inset-x-0 bottom-0 p-3 sm:p-4"
+        style={{ background: 'linear-gradient(to top, rgba(10,10,12,0.95) 55%, transparent)' }}
+      >
+        {featured && cert.score && (
           <span
-            className="hero-heading block font-black leading-none mb-2"
-            style={{ fontSize: 'clamp(1.6rem, 4vw, 2.6rem)' }}
+            className="hero-heading block font-black leading-none mb-1"
+            style={{ fontSize: 'clamp(1.3rem, 3vw, 2rem)' }}
           >
             {cert.score}
           </span>
         )}
         <h3
-          className={`font-medium uppercase text-[#D7E2EA] leading-tight ${featured ? '' : 'tracking-tight'}`}
-          style={{ fontSize: featured ? 'clamp(0.95rem, 1.6vw, 1.25rem)' : 'clamp(0.75rem, 1.3vw, 0.95rem)' }}
+          className="font-medium uppercase text-[#D7E2EA] leading-tight tracking-tight"
+          style={{ fontSize: featured ? 'clamp(0.9rem, 1.5vw, 1.15rem)' : 'clamp(0.7rem, 1.2vw, 0.9rem)' }}
         >
           {cert.title}
         </h3>
