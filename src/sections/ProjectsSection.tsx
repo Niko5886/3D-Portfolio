@@ -45,7 +45,7 @@ function ProjectCard({
     <div className="h-[88vh] flex items-center justify-center sticky top-0">
       <motion.div
         style={{ scale, top: `${index * 16}px`, background: '#0C0C0C' }}
-        className={`relative w-full ${CARD_RADIUS} border-2 border-[#D7E2EA] p-4 sm:p-5 md:p-6`}
+        className={`relative w-full select-none ${CARD_RADIUS} border-2 border-[#D7E2EA] p-4 sm:p-5 md:p-6`}
       >
         {/* Top row */}
         <div className="flex items-center justify-between gap-4 flex-wrap mb-4 sm:mb-6">
