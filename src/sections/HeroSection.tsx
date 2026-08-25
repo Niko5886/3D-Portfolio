@@ -1,6 +1,7 @@
 import FadeIn from '../components/FadeIn';
 import Magnet from '../components/Magnet';
 import ContactButton from '../components/ContactButton';
+import useScrollSpy from '../hooks/useScrollSpy';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -9,7 +10,11 @@ const NAV_LINKS = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const SECTION_IDS = NAV_LINKS.map((link) => link.href.slice(1));
+
 export default function HeroSection() {
+  const activeId = useScrollSpy(SECTION_IDS);
+
   return (
     <section
       className="relative h-screen flex flex-col"
@@ -22,15 +27,23 @@ export default function HeroSection() {
         y={-20}
         className="relative z-20 flex justify-between px-6 md:px-10 pt-6 md:pt-8 text-[#D7E2EA] font-medium uppercase tracking-wider text-sm md:text-lg lg:text-[1.4rem]"
       >
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            className="transition-opacity duration-200 hover:opacity-70"
-          >
-            {link.label}
-          </a>
-        ))}
+        {NAV_LINKS.map((link) => {
+          const isActive = activeId === link.href.slice(1);
+          return (
+            <a
+              key={link.href}
+              href={link.href}
+              aria-current={isActive ? 'page' : undefined}
+              className={`transition-opacity duration-200 ${
+                isActive
+                  ? 'opacity-100 underline underline-offset-8 decoration-2'
+                  : 'opacity-60 hover:opacity-100'
+              }`}
+            >
+              {link.label}
+            </a>
+          );
+        })}
       </FadeIn>
 
       {/* Hero heading */}
