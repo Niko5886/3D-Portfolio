@@ -3,28 +3,28 @@ import FadeIn from '../components/FadeIn';
 const SERVICES = [
   {
     num: '01',
-    name: '3D Modeling',
-    desc: 'Creation of detailed objects, characters, or environments tailored to specific client needs, ideal for games, products, and visualizations.',
+    name: 'Full-Stack Web Development',
+    desc: 'End-to-end web apps in the React / Next.js + TypeScript ecosystem — from architecture to deployment. Clean, scalable front-ends and reliable back-ends with REST APIs, auth and databases.',
   },
   {
     num: '02',
-    name: 'Rendering',
-    desc: 'High-quality, photorealistic renders that showcase designs with custom lighting, textures, and materials to bring concepts to life.',
+    name: 'AI-Native & Agentic Development',
+    desc: 'Production apps built with an AI-first workflow — Claude Code, the Claude API and GitHub Copilot. Custom Model Context Protocol (MCP) connectors and AI tooling that automate and integrate your stack.',
   },
   {
     num: '03',
-    name: 'Motion Design',
-    desc: 'Dynamic animations and motion graphics that add energy and storytelling to brands, products, and digital experiences.',
+    name: 'Front-End & Responsive UI',
+    desc: 'Modern, animated interfaces with React, Next.js, Tailwind CSS and Framer Motion — mobile-first, fast and pixel-accurate on every device.',
   },
   {
     num: '04',
-    name: 'Branding',
-    desc: 'Crafting cohesive visual identities — from logos to full brand systems — that communicate a clear and memorable presence.',
+    name: 'Back-End, Databases & Auth',
+    desc: 'Secure back-ends with Node.js, PostgreSQL (Supabase / Neon) and Drizzle ORM. JWT authentication, Role-Based Access Control and Row-Level Security for strict data isolation.',
   },
   {
     num: '05',
-    name: 'Web Design',
-    desc: 'Designing clean, modern, and conversion-focused websites with attention to layout, typography, and user experience.',
+    name: 'E-Commerce & CMS Websites',
+    desc: 'Conversion-focused online stores and corporate sites with headless CMS , so you manage content yourself — deployed and maintained.',
   },
 ];
 
