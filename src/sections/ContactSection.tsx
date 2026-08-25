@@ -27,7 +27,7 @@ export default function ContactSection() {
       </FadeIn>
 
       <FadeIn delay={0.3} y={20}>
-        <ContactButton href="mailto:Lobido1988@Gmail.Com" />
+        <ContactButton />
       </FadeIn>
 
       <div

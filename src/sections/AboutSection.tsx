@@ -3,7 +3,7 @@ import AnimatedText from '../components/AnimatedText';
 import ContactButton from '../components/ContactButton';
 
 const BIO =
-  'AI-Native Full-Stack Developer Who Pairs Solid Engineering Fundamentals With Modern, Agentic AI-Assisted Workflows To Ship Production-Ready Web Apps — Not Just Prototypes. Certified Across The Complete JavaScript Path (Fundamentals → Advanced → Applications, Incl. AJAX, DOM & SPA), React, And Responsive HTML/CSS Design, With Object-Oriented Java, Databases, And Dedicated Training In Building Full-Stack Apps With AI. I Turn Ideas Into Clean, Scalable Front-Ends And Reliable Back-Ends Fast — Fluent With Git/GitHub And AI Tools Like GitHub Copilot And Many More.';
+  'AI-Native Full-Stack Developer Who Pairs Solid Engineering Fundamentals With Modern, Agentic AI-Assisted Workflows To Ship Production-Ready Web Apps — Not Just Prototypes. Certified Across The Complete JavaScript Path (Fundamentals → Advanced → Applications, Incl. AJAX, DOM & SPA), React, And Responsive HTML/CSS Design, With Object-Oriented Java, Databases, And Dedicated Training In Building Full-Stack Apps With AI. I Turn Ideas Into Clean, Scalable Front-Ends And Reliable Back-Ends Fast — Fluent With Git/GitHub And AI Tools Like GitHub Copilot, Cluade And Many More.';
 
 const DETAILS: { label: string; value: string; href?: string }[] = [
   { label: 'Age', value: '38' },
@@ -123,7 +123,7 @@ export default function AboutSection() {
 
       <div className="relative z-10 mt-14 sm:mt-16 md:mt-20">
         <FadeIn delay={0.2} y={20}>
-          <ContactButton href="mailto:Lobido1988@Gmail.Com" />
+          <ContactButton />
         </FadeIn>
       </div>
     </section>

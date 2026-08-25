@@ -5,17 +5,20 @@ import ServicesSection from './sections/ServicesSection';
 import ProjectsSection from './sections/ProjectsSection';
 import ContactSection from './sections/ContactSection';
 import ScrollToTop from './components/ScrollToTop';
+import { ContactModalProvider } from './context/ContactModalContext';
 
 export default function App() {
   return (
-    <main style={{ background: '#0C0C0C', overflowX: 'clip' }}>
-      <HeroSection />
-      <MarqueeSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <ContactSection />
-      <ScrollToTop />
-    </main>
+    <ContactModalProvider>
+      <main style={{ background: '#0C0C0C', overflowX: 'clip' }}>
+        <HeroSection />
+        <MarqueeSection />
+        <AboutSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <ContactSection />
+        <ScrollToTop />
+      </main>
+    </ContactModalProvider>
   );
 }

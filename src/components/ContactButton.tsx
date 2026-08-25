@@ -1,15 +1,19 @@
+import { useContactModal } from '../context/ContactModalContext';
+
 interface ContactButtonProps {
   className?: string;
-  href?: string;
 }
 
 /**
- * Rounded gradient pill CTA. Links to the #contact section by default.
+ * Rounded gradient pill CTA. Opens the contact modal.
  */
-export default function ContactButton({ className = '', href = '#contact' }: ContactButtonProps) {
+export default function ContactButton({ className = '' }: ContactButtonProps) {
+  const { openContact } = useContactModal();
+
   return (
-    <a
-      href={href}
+    <button
+      type="button"
+      onClick={openContact}
       className={`inline-block rounded-full text-white font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base transition-transform duration-200 hover:scale-[1.03] ${className}`}
       style={{
         background:
@@ -21,6 +25,6 @@ export default function ContactButton({ className = '', href = '#contact' }: Con
       }}
     >
       Contact Me
-    </a>
+    </button>
   );
 }
