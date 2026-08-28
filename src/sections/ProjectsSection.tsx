@@ -24,6 +24,7 @@ const PROJECTS: Project[] = [
   { num: '09', category: 'Artist Website', name: 'Courtney Barnett', img: 'courtney-barnett', href: 'https://courtney-barnett-website.netlify.app/' },
   { num: '10', category: 'Coaching Tool', name: 'The Wheel of Life', img: 'wheel-of-life', href: 'https://the-wheel-of-life.vercel.app/' },
   { num: '11', category: 'Portfolio', name: 'Personal Portfolio', img: 'portfolio', href: 'https://thebestportfolions.netlify.app/' },
+  { num: '12', category: 'Dental Clinic', name: 'Dental Health', img: 'dental-health', href: 'https://modern-dental-clinic-nik.netlify.app/' },
 ];
 
 const CARD_RADIUS = 'rounded-[40px] sm:rounded-[50px] md:rounded-[60px]';
