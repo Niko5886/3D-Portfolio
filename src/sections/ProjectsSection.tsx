@@ -10,21 +10,23 @@ interface Project {
   name: string;
   img: string;
   href: string;
+  linkLabel?: string;
 }
 
 const PROJECTS: Project[] = [
-  { num: '01', category: 'E-Commerce', name: 'Dana Vitan Store', img: 'dana-vitan', href: 'https://www.danavitan.com/' },
-  { num: '02', category: 'Corporate', name: 'BBL', img: 'bbl', href: 'https://black-and-yellow.netlify.app/' },
-  { num: '03', category: 'Corporate', name: 'At Group', img: 'atgroup', href: 'https://nik-atgroup.netlify.app/home' },
-  { num: '04', category: 'Web App', name: 'Event Planner', img: 'event-planner', href: 'https://eventplannerns.netlify.app/' },
-  { num: '05', category: 'Dating App', name: 'SwingMe', img: 'swingme', href: 'https://swingme.netlify.app/' },
-  { num: '06', category: 'Restaurant', name: 'The Old Florence', img: 'old-florence', href: 'https://theoldflorence.netlify.app/' },
-  { num: '07', category: 'Web App', name: 'CoupleCouple', img: 'couplecouple', href: 'https://couplecouple.netlify.app/login' },
-  { num: '08', category: 'Business Site', name: 'Hairdresser Gloss', img: 'hairdresser-gloss', href: 'https://hairdresser-web-site.vercel.app/' },
-  { num: '09', category: 'Artist Website', name: 'Courtney Barnett', img: 'courtney-barnett', href: 'https://courtney-barnett-website.netlify.app/' },
-  { num: '10', category: 'Coaching Tool', name: 'The Wheel of Life', img: 'wheel-of-life', href: 'https://the-wheel-of-life.vercel.app/' },
-  { num: '11', category: 'Portfolio', name: 'Personal Portfolio', img: 'portfolio', href: 'https://thebestportfolions.netlify.app/' },
-  { num: '12', category: 'Dental Clinic', name: 'Dental Health', img: 'dental-health', href: 'https://modern-dental-clinic-nik.netlify.app/' },
+  { num: '01', category: 'AI Tooling · MCP', name: 'Make.com MCP Connector', img: 'make-mcp', href: 'https://github.com/Niko5886/make-mcp', linkLabel: 'View on GitHub' },
+  { num: '02', category: 'E-Commerce', name: 'Dana Vitan Store', img: 'dana-vitan', href: 'https://www.danavitan.com/' },
+  { num: '03', category: 'Corporate', name: 'BBL', img: 'bbl', href: 'https://black-and-yellow.netlify.app/' },
+  { num: '04', category: 'Corporate', name: 'At Group', img: 'atgroup', href: 'https://nik-atgroup.netlify.app/home' },
+  { num: '05', category: 'Web App', name: 'Event Planner', img: 'event-planner', href: 'https://eventplannerns.netlify.app/' },
+  { num: '06', category: 'Dating App', name: 'SwingMe', img: 'swingme', href: 'https://swingme.netlify.app/' },
+  { num: '07', category: 'Restaurant', name: 'The Old Florence', img: 'old-florence', href: 'https://theoldflorence.netlify.app/' },
+  { num: '08', category: 'Web App', name: 'CoupleCouple', img: 'couplecouple', href: 'https://couplecouple.netlify.app/login' },
+  { num: '09', category: 'Business Site', name: 'Hairdresser Gloss', img: 'hairdresser-gloss', href: 'https://hairdresser-web-site.vercel.app/' },
+  { num: '10', category: 'Artist Website', name: 'Courtney Barnett', img: 'courtney-barnett', href: 'https://courtney-barnett-website.netlify.app/' },
+  { num: '11', category: 'Coaching Tool', name: 'The Wheel of Life', img: 'wheel-of-life', href: 'https://the-wheel-of-life.vercel.app/' },
+  { num: '12', category: 'Portfolio', name: 'Personal Portfolio', img: 'portfolio', href: 'https://thebestportfolions.netlify.app/' },
+  { num: '13', category: 'Dental Clinic', name: 'Dental Health', img: 'dental-health', href: 'https://modern-dental-clinic-nik.netlify.app/' },
 ];
 
 const CARD_RADIUS = 'rounded-[40px] sm:rounded-[50px] md:rounded-[60px]';
@@ -70,7 +72,7 @@ function ProjectCard({
               </h3>
             </div>
           </div>
-          <LiveProjectButton href={project.href} />
+          <LiveProjectButton href={project.href} label={project.linkLabel} />
         </div>
 
         {/* Live project screenshots — two stacked left, one tall right */}

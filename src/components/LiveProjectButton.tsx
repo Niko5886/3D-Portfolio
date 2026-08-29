@@ -1,12 +1,14 @@
 interface LiveProjectButtonProps {
   href: string;
   className?: string;
+  label?: string;
 }
 
 /**
- * Ghost/outline pill link used on project cards. Opens the live project in a new tab.
+ * Ghost/outline pill link used on project cards. Opens the live project (or repo) in a new tab.
+ * `label` defaults to "Live Project"; pass e.g. "View on GitHub" for tool/backend projects.
  */
-export default function LiveProjectButton({ href, className = '' }: LiveProjectButtonProps) {
+export default function LiveProjectButton({ href, className = '', label = 'Live Project' }: LiveProjectButtonProps) {
   return (
     <a
       href={href}
@@ -14,7 +16,7 @@ export default function LiveProjectButton({ href, className = '' }: LiveProjectB
       rel="noopener noreferrer"
       className={`inline-block rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-sm sm:text-base transition-colors duration-200 hover:bg-[#D7E2EA]/10 ${className}`}
     >
-      Live Project
+      {label}
     </a>
   );
 }
