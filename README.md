@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <a href="https://nikolay-ai-native-developer.netlify.app"><img alt="Live Demo" src="https://img.shields.io/badge/%E2%96%B6_Live_Demo-nikolay--ai--native--developer.netlify.app-BE4C00?style=for-the-badge&logo=netlify&logoColor=white"></a>
+  <a href="https://nikolay-ai-native-developer.vercel.app/"><img alt="Live Demo" src="https://img.shields.io/badge/%E2%96%B6_Live_Demo-nikolay--ai--native--developer.netlify.app-BE4C00?style=for-the-badge&logo=netlify&logoColor=white"></a>
 </p>
 
 ---
