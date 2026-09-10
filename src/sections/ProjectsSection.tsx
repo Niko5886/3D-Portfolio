@@ -48,9 +48,14 @@ function ProjectCard({
   const scale = useTransform(progress, [index / total, 1], [1, targetScale]);
 
   return (
-    <div className="h-[88vh] flex items-center justify-center sticky top-0">
+    <div className="h-[88vh] flex items-start justify-center sticky top-0">
       <motion.div
-        style={{ scale, top: `${index * 16}px`, background: '#0C0C0C' }}
+        style={{
+          scale,
+          top: `calc(6vh + ${index * 6}px)`,
+          transformOrigin: 'top center',
+          background: '#0C0C0C',
+        }}
         className={`relative w-full select-none ${CARD_RADIUS} border-2 border-[#D7E2EA] p-4 sm:p-5 md:p-6`}
       >
         {/* Top row */}
