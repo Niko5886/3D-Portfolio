@@ -29,6 +29,7 @@ const PROJECTS: Project[] = [
   { num: '13', category: 'Portfolio', name: 'Personal Portfolio', img: 'portfolio', href: 'https://thebestportfolions.netlify.app/' },
   { num: '14', category: 'Dental Clinic', name: 'Dental Health', img: 'dental-health', href: 'https://modern-dental-clinic-nik.netlify.app/' },
   { num: '15', category: 'E-Commerce', name: 'Pretty.bg', img: 'pretty-bg', href: 'https://pretty-bg.vercel.app/' },
+  { num: '16', category: 'Yacht Charter', name: 'Aventis Yacht', img: 'aventis-yacht', href: 'https://aventis-yacht-sunny-beach.netlify.app/' },
 ];
 
 const CARD_RADIUS = 'rounded-[40px] sm:rounded-[50px] md:rounded-[60px]';
